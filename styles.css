@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+
+  /* SEED COLOR - Change ONLY this line to update the entire theme */
+  --seed-color: #1976d2;
+
+  /* PRIMARY PALETTE (automatically generated from seed color using color-mix) */
+  --color-primary-lighter: color-mix(in srgb, var(--seed-color) 10%, white 90%);  /* Lightest tint */
+  --color-primary: var(--seed-color);                                             /* Main brand color */
+  --color-primary-dark: color-mix(in srgb, var(--seed-color) 85%, black 15%);     /* Dark shade */
+  --color-primary-darker: color-mix(in srgb, var(--seed-color) 70%, black 30%);   /* Darkest shade */
+
+  /* NEUTRAL PALETTE (automatically generated - tinted grays for cohesion) */
+  --color-neutral-0: #ffffff;                                                     /* Pure white */
+  --color-neutral-50: color-mix(in srgb, var(--seed-color) 2%, white 98%);       /* Near white */
+  --color-neutral-200: color-mix(in srgb, var(--seed-color) 5%, #e5e5e5 95%);    /* Light gray */
+  --color-neutral-300: color-mix(in srgb, var(--seed-color) 8%, #d0d0d0 92%);    /* Light-medium gray */
+  --color-neutral-500: color-mix(in srgb, var(--seed-color) 12%, #909090 88%);   /* Medium gray */
+  --color-neutral-600: color-mix(in srgb, var(--seed-color) 15%, #707070 85%);   /* Medium-dark gray */
+  --color-neutral-900: color-mix(in srgb, var(--seed-color) 25%, #1a1a1a 75%);   /* Near black */
+
+  /* SEMANTIC COLOR ROLES (what each color means) */
+  --color-text-primary: var(--color-neutral-900);      /* Main body text */
+  --color-text-secondary: var(--color-neutral-600);    /* Secondary text (dates, metadata) */
+  --color-accent: var(--color-primary-dark);           /* Accent color (name, section titles) */
+  --color-link: var(--color-primary);                  /* Links */
+  --color-link-hover: var(--color-primary-dark);       /* Link hover state */
+  --color-border: var(--color-neutral-300);            /* Standard borders */
+  --color-border-subtle: var(--color-neutral-200);     /* Subtle dividers */
+  --color-border-accent: var(--color-primary-lighter); /* Accent borders */
+  --color-background: var(--color-neutral-0);          /* Page background */
+
+  /* ===== SPACING SYSTEM (Vertical Rhythm) ===== */
+  --space-xs: 0.25em;   /* 4px  - Tiny spacing */
+  --space-sm: 0.5em;    /* 8px  - Small spacing */
+  --space-md: 1em;      /* 16px - Medium spacing */
+  --space-lg: 1.5em;    /* 24px - Large spacing */
+  --space-xl: 2em;      /* 32px - Extra large spacing */
+  --space-xxl: 2.5em;   /* 40px - Section spacing */
+
+  /* ===== MD3 REFERENCE TOKENS ===== */
+  --md-ref-typeface: 'Roboto Flex', 'Roboto', 'Noto Sans', sans-serif;
+  --md-ref-typeface-code: 'Roboto Mono', 'Courier New', monospace;
+
+  /* ===== MD3 SYSTEM TOKENS - TYPOGRAPHY SCALE ===== */
+  --md-sys-typescale-headline-large: 400 2rem/2.5rem var(--md-ref-typeface);
+  --md-sys-typescale-headline-small: 400 1.5rem/2rem var(--md-ref-typeface);
+  --md-sys-typescale-title-large: 500 1.375rem/1.75rem var(--md-ref-typeface);
+  --md-sys-typescale-title-medium: 500 1rem/1.5rem var(--md-ref-typeface);
+  --md-sys-typescale-body-large: 400 1rem/1.5rem var(--md-ref-typeface);
+  --md-sys-typescale-body-medium: 400 0.875rem/1.25rem var(--md-ref-typeface);
+  --md-sys-typescale-label-small: 500 0.6875rem/1rem var(--md-ref-typeface-code);
+
+  /* Helper variable for body-medium font-size (extracted from shorthand for standalone use) */
+  --font-size-body-medium: 0.875rem;
+
+  /* ===== TRANSITIONS ===== */
+  --transition-normal: 0.2s ease;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 0.75in 1in;
+  font: var(--md-sys-typescale-body-large);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+/* ===== HEADER ===== */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+#name {
+  font: var(--md-sys-typescale-headline-large);
+  color: var(--color-accent);
+}
+
+#links {
+  text-align: right;
+}
+
+/* Links styling */
+.link-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.link-icon {
+  display: inline-block;
+  font: var(--md-sys-typescale-label-small);
+  color: var(--color-text-secondary);
+  margin-right: var(--space-sm);
+  min-width: 2em;
+}
+
+.link-item a {
+  color: var(--color-link);
+  text-decoration: none;
+  font-size: var(--font-size-body-medium);
+  transition: color var(--transition-normal);
+}
+
+.link-item a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* ===== TYPOGRAPHY HIERARCHY ===== */
+
+/* Section Titles (h2) - EXECUTIVE SUMMARY, PROFESSIONAL EXPERIENCE, etc. */
+h2 {
+  font: var(--md-sys-typescale-headline-small);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-top: var(--space-xxl);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--color-border-accent);
+}
+
+h2:first-of-type {
+  margin-top: var(--space-md);
+}
+
+/* Job Titles (h3) - Software Engineer / Company */
+h3 {
+  font: var(--md-sys-typescale-title-large);
+  color: var(--color-text-primary);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+/* Skill Categories (h4) - Frontend Frameworks, Backend, etc. */
+h4 {
+  font: var(--md-sys-typescale-title-medium);
+  color: var(--color-text-primary);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+/* ===== SECTION-SPECIFIC STYLES ===== */
+
+/* Summary section */
+#summary p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+/* Experience section */
+.job {
+  margin-bottom: var(--space-lg);
+}
+
+.job h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-xs);
+}
+
+.job p {
+  font: var(--md-sys-typescale-body-medium);
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-secondary);
+}
+
+.job ul {
+  padding-left: 1.25em;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.job li {
+  margin-bottom: var(--space-xs);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+/* Education section */
+.education-item {
+  margin-bottom: var(--space-lg);
+}
+
+.education-item p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.education-item p:first-child {
+  font-weight: bold;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+}
+
+.education-item p:nth-child(2) {
+  font-style: italic;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.education-item p:last-child {
+  font-size: var(--font-size-body-medium);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* Skills section */
+.skill-category {
+  margin-bottom: var(--space-md);
+}
+
+.skill-category h4 {
+  margin-top: 0;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-primary);
+}
+
+.skill-category p {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+}
+
+/* Contact footer */
+#contact {
+  text-align: center;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+#contact span {
+  font-size: var(--font-size-body-medium);
+  padding: 0 var(--space-sm);
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+#contact span:first-child {
+  padding-left: 0;
+}
+
+#contact span:last-child {
+  border-right: none;
+}
+
+/* ===== COVER LETTER STYLES ===== */
+
+/* Recipient address block */
+.cover-letter-recipient {
+  margin-bottom: var(--space-lg);
+}
+
+.cover-letter-recipient p {
+  margin: 0;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+}
+
+/* Salutation */
+.cover-letter-salutation {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+  color: var(--color-text-primary);
+}
+
+/* Cover letter body paragraphs */
+.cover-letter-body {
+  margin-bottom: var(--space-xl);
+}
+
+.cover-letter-body p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  text-align: justify;
+}
+
+.cover-letter-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Closing section */
+.cover-letter-closing {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.cover-letter-closing p {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.cover-letter-signature {
+  margin-top: var(--space-lg) !important;
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  :root {
+    /* Print colors (automatically derived from seed color for cohesion) */
+    --color-text-primary: #000000;
+    --color-text-secondary: #4a4a4a;
+    --color-accent: color-mix(in srgb, var(--seed-color) 60%, black 40%);        /* Darker version for print */
+    --color-border: #cccccc;
+    --color-border-subtle: #e0e0e0;
+    --color-border-accent: color-mix(in srgb, var(--seed-color) 15%, white 85%); /* Light version for print */
+  }
+
+  /* Page setup for US Letter */
+  @page {
+    size: letter portrait;
+    margin: 0.5in 0.75in;
+  }
+
+  /* Reset body for print */
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  /* Section headings in print */
+  h2 {
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+    border-bottom: 1.5pt solid var(--color-border-accent);
+  }
+
+  h2:first-of-type {
+    margin-top: 8pt;
+  }
+
+  /* Job titles in print */
+  h3 {
+    margin-top: 8pt;
+    margin-bottom: 2pt;
+  }
+
+  /* Skill categories in print */
+  h4 {
+    margin-top: 8pt;
+    margin-bottom: 2pt;
+  }
+
+  /* Contact footer for print */
+  #contact {
+    margin-top: 16pt;
+    padding-top: 8pt;
+    border-top: 0.5pt solid var(--color-border);
+  }
+
+  /* Page break controls */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  #header, #summary {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .job, .education-item, .skill-category {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links */
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .link-item a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .link-icon {
+    color: var(--color-text-secondary);
+  }
+
+  /* Ensure colors print correctly */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    overflow: visible !important;
+  }
+}

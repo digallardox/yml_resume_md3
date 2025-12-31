@@ -1,0 +1,99 @@
+summary:
+  - Full-stack Software Engineer with five years of professional experience building scalable web applications and cloud infrastructure.
+  - Specializing in modern JavaScript frameworks, cloud architecture, and creating performant user experiences.
+  - Passionate about clean code, testing best practices, and collaborating with cross-functional teams to deliver high-quality software solutions.
+
+experience:
+  - title: Senior Full-Stack Engineer
+    company: TechCorp Solutions
+    dates: Jan 2023 - Present
+    summary:
+      - Lead development of microservices architecture serving 2M+ daily active users using Node.js, React, and PostgreSQL
+      - Implement CI/CD pipelines with GitHub Actions and Docker, reducing deployment time by 60%
+      - Mentor junior developers and conduct code reviews to maintain high code quality standards
+  - title: Full-Stack Developer
+    company: CloudStart Inc
+    dates: Jun 2021 - Dec 2022
+    summary:
+      - Built and maintained customer-facing web applications using React, Next.js, and TypeScript
+      - Designed and implemented RESTful APIs and GraphQL endpoints for mobile and web clients
+      - Collaborated with product managers and designers to translate requirements into technical solutions
+      - Reduced page load times by 40% through performance optimization and lazy loading techniques
+  - title: Frontend Developer
+    company: Digital Agency Co
+    dates: Mar 2020 - May 2021
+    summary:
+      - Developed responsive web applications for clients in e-commerce and SaaS industries
+      - Created reusable component libraries using React and styled-components
+      - Worked closely with UX designers to implement pixel-perfect designs and smooth animations
+      - Participated in Agile ceremonies and contributed to sprint planning
+  - title: Junior Developer
+    company: StartupLabs
+    dates: Aug 2019 - Feb 2020
+    summary:
+      - Contributed to full-stack features using JavaScript, Express, and MongoDB
+      - Fixed bugs and implemented new features based on user feedback and analytics
+      - Wrote unit and integration tests to improve code coverage from 45% to 75%
+      - Assisted in database migrations and performance tuning
+  - title: Software Development Intern
+    company: Innovation Tech
+    dates: Jun 2019 - Aug 2019
+    summary:
+      - Developed internal tools using Python and Flask to automate manual workflows
+      - Collaborated with senior engineers on feature development and bug fixes
+      - Participated in daily standups and presented project updates to the team
+
+education:
+  degrees:
+    - degree: Full-Stack Web Development Bootcamp
+      institution: Tech Academy
+      dates: Jan 2019 - Jun 2019
+    - degree: Bachelor of Science in Computer Science
+      institution: State University
+      dates: Aug 2014 - May 2018
+  certifications:
+    - course: AWS Certified Solutions Architect
+      provider: Amazon Web Services
+      dates: March 2023
+    - course: React Advanced Patterns
+      provider: Frontend Masters
+      dates: November 2022
+    - course: Docker & Kubernetes Essentials
+      provider: Cloud Native Computing Foundation
+      dates: July 2022
+    - course: GraphQL API Development
+      provider: Apollo GraphQL
+      dates: April 2021
+
+skills:
+  Frontend Frameworks:
+    - React
+    - Next.js
+    - Vue.js
+    - TypeScript
+  Programming Languages:
+    - JavaScript
+    - TypeScript
+    - Python
+    - Go
+  Backend & Databases:
+    - Node.js
+    - Express
+    - PostgreSQL
+    - MongoDB
+    - GraphQL
+  Tools & Technologies:
+    - Git
+    - Docker
+    - Kubernetes
+    - CI/CD
+    - Jest
+  Design & Collaboration:
+    - Figma
+    - Jira
+    - Confluence
+    - Slack
+  Cloud Platforms:
+    - AWS
+    - Google Cloud
+    - Azure
