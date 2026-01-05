@@ -33,7 +33,7 @@ function renderExperience(experience) {
 }
 
 function renderEducation(education) {
-  const degreesHTML = education.degrees.map(edu => `
+  const degreesHTML = education.map(edu => `
     <div class="education-item">
       <p>${edu.degree}</p>
       <p>${edu.institution}</p>
@@ -41,18 +41,19 @@ function renderEducation(education) {
     </div>
   `).join('');
 
-  const certificationsHTML = education.certifications.length > 0 ? `
-    <h2>CERTIFICATIONS</h2>
-    ${education.certifications.map(cert => `
-      <div class="education-item">
-        <p>${cert.course}</p>
-        <p>${cert.provider}</p>
-        ${cert.dates ? `<p>${cert.dates}</p>` : ''}
-      </div>
-    `).join('')}
-  ` : '';
+  document.getElementById('education').innerHTML = degreesHTML;
+}
 
-  document.getElementById('education').innerHTML = degreesHTML + certificationsHTML;
+function renderCertifications(certifications) {
+  const certificationsHTML = certifications.map(cert => `
+    <div class="education-item">
+      <p>${cert.course}</p>
+      <p>${cert.provider}</p>
+      ${cert.dates ? `<p>${cert.dates}</p>` : ''}
+    </div>
+  `).join('');
+
+  document.getElementById('certifications').innerHTML = certificationsHTML;
 }
 
 function renderSkills(skills) {
@@ -75,5 +76,6 @@ function renderSkills(skills) {
   renderSummary(resume.summary);
   renderExperience(resume.experience);
   renderEducation(resume.education);
+  renderCertifications(resume.certifications);
   renderSkills(resume.skills);
 })();
