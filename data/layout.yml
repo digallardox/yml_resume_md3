@@ -1,12 +1,12 @@
-name: ALEX JOHNSON
+name: DIEGO GALLARDO
 contact:
-  phone: 555-123-4567
-  email: alex.johnson@example.com
-  location: San Francisco, CA
+  phone: 319-540-3113
+  email: digallardox@gmail.com
+  location: Austin, TX
 links:
   - name: LinkedIn
-    url: https://www.linkedin.com/in/alexjohnson
+    url: https://www.linkedin.com/in/digallardox
     icon: in
   - name: GitHub
-    url: https://github.com/alexjohnson
+    url: https://github.com/digallardox
     icon: gh
